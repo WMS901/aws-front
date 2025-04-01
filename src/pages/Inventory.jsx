@@ -39,7 +39,7 @@ const Inventory = () => {
   return (
     <div className="inventory-container">
       <main className="inventory-content">
-        <h1>📦 재고 관리</h1>
+        <h1>📦 재고 관리test</h1>
 
         {/* ✅ 테이블 직접 포함 */}
         <div className="table-wrapper">
