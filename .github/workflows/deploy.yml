@@ -3,7 +3,7 @@ name: WMS Frontend CI/CD
 on:
   push:
     branches:
-      - main_CI_CD  # main_CI_CD 브랜치에서 실행
+      - main
 
 jobs:
   build-and-deploy:
@@ -39,7 +39,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync ./dist s3://wms-frontend-bucket --delete
+        run: aws s3 sync ./dist s3://frontend-page --delete
 
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id E16RJ4E81QQU4 --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id E211K9BY5DD3VW --paths "/*"
